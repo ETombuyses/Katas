@@ -1,16 +1,16 @@
-# js-kata-starter
+# Katas
 
-Starter project for kata (Node, TypeScript, Jest)
+TDD exercices
 
 ## Installation
 
 ```text
-git clone https://github.com/mathieueveillard/js-kata-starter.git
-cd js-kata-starter
+git clone https://github.com/ETombuyses/Katas.git
+cd Katas
 npm install
 ```
 
-## Development
+## Run tests
 
 ```text
 npm test
