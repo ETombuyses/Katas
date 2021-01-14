@@ -2,24 +2,25 @@
 /* Write a function that displays a diamond given its width n, a non-nul, odd, natural integer. */
 
 export const createDiamond = (n: number): string | boolean => {
-  if (Math.round(n) !== n || !(n % 2 > 0)) return false;
+  if (Math.round(n) !== n || n % 2 === 0) return false;
 
   let diamond: string = "";
   const middle: number = (n + 1) / 2;
 
+  // create each row and adds them to the diamond
   for (let i = 1; i <= n; i++) {
     const starsCount: number = n - Math.abs(middle - i) * 2;
-    const whiteCount: number = n - starsCount;
+    const blankCount: number = n - starsCount;
 
-    diamond += generateNewRow(whiteCount, starsCount);
+    diamond += generateNewRow(blankCount, starsCount);
     if (i !== n) diamond += "\n";
   }
-  console.log(diamond);
+  // console.log(diamond);
   return diamond;
 };
 
-const generateNewRow = (whiteCount: number, starsCount: number): string => {
-  return generatePattern(whiteCount / 2, " ") + generatePattern(starsCount, "*") + generatePattern(whiteCount / 2, " ");
+const generateNewRow = (blankCount: number, starsCount: number): string => {
+  return generatePattern(blankCount / 2, " ") + generatePattern(starsCount, "*") + generatePattern(blankCount / 2, " ");
 };
 
 const generatePattern = (condition: number, string: string): string => {
